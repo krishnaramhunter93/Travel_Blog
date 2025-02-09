@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Blog</title>
     <style>
+         /* Set up general styles for body */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
@@ -12,23 +13,27 @@
             margin: 0;
             padding: 0;
         }
+            /* Center container with max-width for responsive layout */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+         /* Style the main title */
         h1 {
             text-align: center;
             color: #107591;
             font-size: 2.5em;
             margin-bottom: 20px;
         }
+        /* Layout for numbered buttons representing destinations */
         .number-container {
             display: flex;
             justify-content: center;
             gap: 15px;
             margin-bottom: 30px;
         }
+         /* Number button styles */
         .number {
             width: 60px;
             height: 60px;
@@ -41,14 +46,17 @@
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        /* Hover effects for number buttons */
         .number:hover {
             transform: scale(1.1);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+        /* Assign different colors to number buttons */
         .red { background-color: #E57373; }
         .blue { background-color: #64B5F6; }
         .green { background-color: #54de5b; }
         .orange { background-color: #ff9f43; }
+        /* Hidden destination sections */
         .destination {
             display: none;
             margin-top: 20px;
@@ -57,54 +65,65 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+        /* Style the destination headings */
         .destination h2 {
             color: #107591;
             font-size: 2em;
             margin-bottom: 15px;
         }
+        /* Style ordered lists for countries */
         .destination ol {
             list-style-type: none;
             padding-left: 20px;
         }
+        /* Style list items inside ordered lists */
         .destination ol li {
             margin-bottom: 10px;
             font-weight: bold;
             color: #333;
         }
+        /* Style unordered lists inside ordered lists */
         .destination ul {
             list-style-type: disc;
             padding-left: 40px;
             margin-top: 5px;
         }
+        /* Style list items inside unordered lists */
         .destination ul li {
             font-weight: normal;
             color: #555;
         }
+        /* Styling for the travel destinations table */
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
             border: 2px solid #107591;
         }
+        /* Style table headers and cells */
         th, td {
             padding: 15px;
             text-align: center;
             border: 1px solid #107591;
         }
+         /* Style table header */
         th {
             background-color: #107591;
             color: white;
             font-weight: bold;
         }
+        /* Zebra striping for rows */
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
         tr:nth-child(odd) {
             background-color: #ffffff;
         }
+        /* Hover effect for table rows */
         tr:hover {
             background-color: #c2c2c9;
         }
+        /* Style images in table */
         table img {
             width: 100px;
             height: auto;
@@ -113,10 +132,12 @@
             border-radius: 8px;
             margin: 5px;
         }
+         /* Image hover effect */
         table img:hover {
             opacity: 0.7;
             cursor: pointer;
         }
+        /* Section styles for famous attractions */
         .attraction-section {
             margin-top: 40px;
         }
@@ -135,13 +156,14 @@
 <body>
     <div class="container">
         <h1>Travel Blog</h1>
+        <!-- Buttons to toggle destination details -->
         <div class="number-container">
             <div class="number red" onclick="showDestination(1)">1</div>
             <div class="number blue" onclick="showDestination(2)">2</div>
             <div class="number green" onclick="showDestination(3)">3</div>
             <div class="number orange" onclick="showDestination(4)">4</div>
         </div>
-        
+        <!-- Destination Details -->
         <div id="destination1" class="destination">
             <h2>Destination 1: Europe</h2>
             <ol>
@@ -249,7 +271,7 @@
                 </li>
             </ol>
         </div>
-        
+        <!-- Travel Destinations Table -->
         <h2>Travel Destinations</h2>
         <table>
             <tr>
@@ -281,7 +303,7 @@
                 </td>
             </tr>
         </table>
-        
+        <!-- Attraction Descriptions -->
         <div class="attraction-section">
             <h2 id="eiffel">Eiffel Tower</h2>
             <p>The Eiffel Tower is a wrought-iron lattice tower in Paris, France. It is one of the most iconic landmarks in the world and offers breathtaking views of the city.</p>
