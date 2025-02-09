@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #107591;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .number-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .number {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .number:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .red { background-color: #E57373; }
+        .blue { background-color: #64B5F6; }
+        .green { background-color: #54de5b; }
+        .orange { background-color: #ff9f43; }
+        .destination {
+            display: none;
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .destination h2 {
+            color: #107591;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .destination ol {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .destination ol li {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        .destination ul {
+            list-style-type: disc;
+            padding-left: 40px;
+            margin-top: 5px;
+        }
+        .destination ul li {
+            font-weight: normal;
+            color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border: 2px solid #107591;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #107591;
+        }
+        th {
+            background-color: #107591;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+        tr:hover {
+            background-color: #c2c2c9;
+        }
+        table img {
+            width: 100px;
+            height: auto;
+            transition: opacity 0.3s ease;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            margin: 5px;
+        }
+        table img:hover {
+            opacity: 0.7;
+            cursor: pointer;
+        }
+        .attraction-section {
+            margin-top: 40px;
+        }
+        .attraction-section h2 {
+            color: #107591;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .attraction-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Travel Blog</h1>
+        <div class="number-container">
+            <div class="number red" onclick="showDestination(1)">1</div>
+            <div class="number blue" onclick="showDestination(2)">2</div>
+            <div class="number green" onclick="showDestination(3)">3</div>
+            <div class="number orange" onclick="showDestination(4)">4</div>
+        </div>
+        
+        <div id="destination1" class="destination">
+            <h2>Destination 1: Europe</h2>
+            <ol>
+                <li>France
+                    <ul>
+                        <li>Paris</li>
+                        <li>Nice</li>
+                        <li>Marseille</li>
+                    </ul>
+                </li>
+                <li>Italy
+                    <ul>
+                        <li>Rome</li>
+                        <li>Florence</li>
+                        <li>Venice</li>
+                    </ul>
+                </li>
+                <li>Greece
+                    <ul>
+                        <li>Athens</li>
+                        <li>Thessaloniki</li>
+                        <li>Santorini</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div id="destination2" class="destination">
+            <h2>Destination 2: Asia</h2>
+            <ol>
+                <li>Japan
+                    <ul>
+                        <li>Tokyo</li>
+                        <li>Kyoto</li>
+                        <li>Osaka</li>
+                    </ul>
+                </li>
+                <li>China
+                    <ul>
+                        <li>Beijing</li>
+                        <li>Shanghai</li>
+                        <li>Xi'an</li>
+                    </ul>
+                </li>
+                <li>India
+                    <ul>
+                        <li>New Delhi</li>
+                        <li>Mumbai</li>
+                        <li>Jaipur</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div id="destination3" class="destination">
+            <h2>Destination 3: America</h2>
+            <ol>
+                <li>USA
+                    <ul>
+                        <li>New York City</li>
+                        <li>Los Angeles</li>
+                        <li>Chicago</li>
+                    </ul>
+                </li>
+                <li>Brazil
+                    <ul>
+                        <li>Rio de Janeiro</li>
+                        <li>São Paulo</li>
+                        <li>Salvador</li>
+                    </ul>
+                </li>
+                <li>Canada
+                    <ul>
+                        <li>Toronto</li>
+                        <li>Vancouver</li>
+                        <li>Montreal</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div id="destination4" class="destination">
+            <h2>Destination 4: Africa</h2>
+            <ol>
+                <li>South Africa
+                    <ul>
+                        <li>Cape Town</li>
+                        <li>Johannesburg</li>
+                        <li>Durban</li>
+                    </ul>
+                </li>
+                <li>Egypt
+                    <ul>
+                        <li>Cairo</li>
+                        <li>Luxor</li>
+                        <li>Sharm El Sheikh</li>
+                    </ul>
+                </li>
+                <li>Morocco
+                    <ul>
+                        <li>Marrakech</li>
+                        <li>Casablanca</li>
+                        <li>Fez</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <h2>Travel Destinations</h2>
+        <table>
+            <tr>
+                <th>Destination</th>
+                <th>Attraction</th>
+            </tr>
+            <tr>
+                <td>Paris</td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Eiffel_Tower" target="_blank">
+                        <img src="eiffel.jpg" alt="Eiffel Tower">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>New York</td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Statue_of_Liberty" target="_blank">
+                        <img src="statue.jpg" alt="Statue of Liberty">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>Rome</td>
+                <td>
+                    <a href="https://en.wikipedia.org/wiki/Colosseum" target="_blank">
+                        <img src="Colosseum_Rome.jpg" alt="Colosseum">
+                    </a>
+                </td>
+            </tr>
+        </table>
+        
+        <div class="attraction-section">
+            <h2 id="eiffel">Eiffel Tower</h2>
+            <p>The Eiffel Tower is a wrought-iron lattice tower in Paris, France. It is one of the most iconic landmarks in the world and offers breathtaking views of the city.</p>
+        </div>
+        
+        <div class="attraction-section">
+            <h2 id="colosseum">Colosseum</h2>
+            <p>The Colosseum is an ancient amphitheater in Rome, Italy. It is a testament to the architectural prowess of the Roman Empire and is a must-visit for history enthusiasts.</p>
+        </div>
+        
+        <div class="attraction-section">
+            <h2 id="statue">Statue of Liberty</h2>
+            <p>The Statue of Liberty is a symbol of freedom in New York, USA. It stands as a welcoming sight to immigrants arriving from abroad and is a powerful symbol of hope and liberty.</p>
+        </div>
+    </div>
+
+    <script>
+        function showDestination(num) {
+            document.querySelectorAll('.destination').forEach(el => el.style.display = 'none');
+            document.getElementById('destination' + num).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
