@@ -52,7 +52,7 @@ Welcome to the **Travel Blog** project! This is a simple, interactive, and visua
 ## How to Run the Project
 
 1. Clone the repository or download the project files.
-2. Open the `index.html` file in your preferred web browser.
+2. Open the `indexindex_unit_2_assignment.html` file in your preferred web browser.
 3. Explore the website and enjoy!
 
 ---
